@@ -10,6 +10,7 @@
 /*** 2 - Upper-bound ***/
 /*** 3 - Grid calc ***/
 /* Rem calc function */
+/* Pixel to REM Conversion */
 /* Asset URL builder */
 /* Image asset helper */
 /* Font asset helper */
@@ -73,7 +74,8 @@ h6,
 .ontario-h5, h4,
 .ontario-h4, h3,
 .ontario-h3, h2,
-.ontario-h2, h1 > .ontario-label--heading, h1,
+.ontario-h2, h1 > .ontario-label--heading, .ontario-fieldset__legend--large h1,
+.ontario-fieldset__legend--heading h1, h1,
 .ontario-h1 {
   font-style: normal;
   font-weight: 700;
@@ -83,7 +85,8 @@ h6,
   font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-h1 > .ontario-label--heading, h1,
+h1 > .ontario-label--heading, .ontario-fieldset__legend--large h1,
+.ontario-fieldset__legend--heading h1, h1,
 .ontario-h1 {
   font-size: 2rem;
   letter-spacing: 0.04rem;
@@ -92,7 +95,8 @@ h1 > .ontario-label--heading, h1,
   max-width: 70rem;
 }
 @media screen and (min-width: 40em) {
-  h1 > .ontario-label--heading, h1,
+  h1 > .ontario-label--heading, .ontario-fieldset__legend--large h1,
+  .ontario-fieldset__legend--heading h1, h1,
   .ontario-h1 {
     font-size: 2.5rem;
     letter-spacing: 0.04rem;
@@ -1292,7 +1296,9 @@ h5 + h6 {
   margin-top: 2rem;
 }
 
-p code, td code, li code {
+p code,
+td code,
+li code {
   line-height: 2.25rem;
 }
 
@@ -1365,6 +1371,11 @@ ol li {
 ul li:last-child,
 ol li:last-child {
   padding-bottom: 0;
+}
+
+ul[class*=columns-] li:last-child,
+ol[class*=columns-] li:last-child {
+  padding-bottom: 0.75rem;
 }
 
 ul ul,
@@ -2854,14 +2865,12 @@ p + ol {
 
 .ontario-fieldset__legend--large,
 .ontario-fieldset__legend--heading {
-  font-size: 1.75rem;
   letter-spacing: 0.02rem;
   line-height: 1.2;
 }
 .ontario-fieldset__legend--large h1,
 .ontario-fieldset__legend--heading h1 {
   display: inline-block;
-  font-size: inherit;
   margin: 0;
 }
 @media screen and (max-width: 40em) {
@@ -2870,6 +2879,10 @@ p + ol {
     font-size: 1.4375rem;
     line-height: 1.39;
   }
+}
+
+.ontario-fieldset__legend--large {
+  font-size: 1.75rem;
 }
 
 .ontario-fieldset__legend-required-flag,
@@ -2988,7 +3001,7 @@ h1 > .ontario-label--heading {
 }
 
 .ontario-form-group:last-of-type {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .ontario-aside *:last-of-type,
